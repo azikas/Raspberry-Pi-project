@@ -1,8 +1,7 @@
 # Raspberry-Pi-project
 This project involves 2 Raspberry Pis (emulated using Virtual Box) connected with each other via Ethernet. It implements the Diffie-Hellmann key exchange protocol in each device. To emulate the Ethernet protocol the 2 virtual machines are connected in an internal network and communicate with each other using their IPs and one socket
-bounded to a port.
-Then, an image stored in the first device is encrypted and sent to the second device where it is decrypted. The first board operates as server and the second as client
-in order to create a communication via Ethernet.
+bounded to a port. The first board operates as server and the second as client in order to create a communication via Ethernet.
+Then, an image stored in the first device is encrypted and sent to the second device where it is decrypted. 
 
 The first module implements the Diffie-Hellmann key exchange protocol and works on both board in the same way. First, we choose the two public keys P and G and 
 then one private key for each board a and b respectively. Then we compute the generated keys on each board (x = G^a mod P, y = G^b mod P) 
