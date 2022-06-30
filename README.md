@@ -12,6 +12,8 @@ ka and kb are equal and they are called as the symmetric keys which are used for
 
 The second software module on the first board uses the symmetric key that was computed before and encrypts an image using the AES algorithm on Electronic CodeBook mode.
 For this operation we use the Crypto.Cipher package of Python. The data are divided into blocks of 16 bytes, and each block is encrypted independently. 
-Then the encrypted image is sent to the second board via the established connection. On the second board, when all the data have been received, 
-they are decrypted using AES algorithm in the inverse way. 
+Then the encrypted image is sent to the second board via the established connection.
+
+On the second board, when all the data have been received, they are stored as an encrypted image. Then,
+they are decrypted using AES algorithm on ECB in the inverse way and stored an decrypted image.
 As it can been seen, the decrypted image is identical to the initial image so the whole process worked perfectly.
